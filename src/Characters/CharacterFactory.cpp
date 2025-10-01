@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <iostream>
 #include "Murim/HyukWoonSung.h"
+#include "System/Yuito.h"
 
 namespace ArenaFighter {
 
@@ -99,28 +100,30 @@ void CharacterFactory::InitializeDefaultCharacters() {
 }
 
 void CharacterFactory::RegisterSystemCharacters() {
-    // Example system characters - these would be implemented in separate files
-    // For now, registering placeholders
-    
+    // Yuito - A-Tier AI Pet Master with Fusion System
+    RegisterCharacter(100, "Yuito", CharacterCategory::System,
+        "A-Tier Pet Master who summons AI-controlled creatures and fuses with them for powerful transformations",
+        []() { return std::make_unique<Yuito>(); });
+
     // Digital Samurai
     RegisterCharacter(101, "Digital Samurai", CharacterCategory::System,
         "A cyber-warrior merging traditional combat with digital enhancement",
-        []() { return std::make_unique<CharacterBase>("Digital Samurai", 
-                                                      CharacterCategory::System, 
+        []() { return std::make_unique<CharacterBase>("Digital Samurai",
+                                                      CharacterCategory::System,
                                                       StatMode::Attack); });
-    
+
     // Tech Mage
     RegisterCharacter(102, "Tech Mage", CharacterCategory::System,
         "Master of digital sorcery and virtual reality manipulation",
-        []() { return std::make_unique<CharacterBase>("Tech Mage", 
-                                                      CharacterCategory::System, 
+        []() { return std::make_unique<CharacterBase>("Tech Mage",
+                                                      CharacterCategory::System,
                                                       StatMode::Special); });
-    
+
     // Cyber Ninja
     RegisterCharacter(103, "Cyber Ninja", CharacterCategory::System,
         "Stealth assassin with advanced cloaking and hacking abilities",
-        []() { return std::make_unique<CharacterBase>("Cyber Ninja", 
-                                                      CharacterCategory::System, 
+        []() { return std::make_unique<CharacterBase>("Cyber Ninja",
+                                                      CharacterCategory::System,
                                                       StatMode::Hybrid); });
 }
 
