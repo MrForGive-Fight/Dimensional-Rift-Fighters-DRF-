@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "dfr-server": {
+      "command": "node",
+      "args": ["C:\\Rift\\Server\\DFR\\mcp-servers\\dfr-server.js"],
+      "name": "DFR Project Server",
+      "description": "MCP server for the DFR project",
+      "env": {},
+      "alwaysAllow": []
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "balance_validator",
+  "capabilities": [
+    "stat_mode_balancing",
+    "win_rate_analysis",
+    "meta_prediction",
+    "gear_synergy_validation"
+  ],
+  "stat_modes": [
+    "Attack", "Defense", "Special", 
+    "Hybrid", "Custom"
+  ]
+}

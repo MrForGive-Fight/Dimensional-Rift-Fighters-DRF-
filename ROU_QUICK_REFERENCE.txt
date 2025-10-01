@@ -1,0 +1,71 @@
+ROU QUICK REFERENCE - DFR GAME
+==============================
+
+EVOLUTION THRESHOLDS:
+- Goblin:       0-24%
+- Hobgoblin:    25-49%
+- Ogre:         50-74%
+- Apostle Lord: 75-99%
+- Vajrayaksa:   100%
+
+GAUGE BUILDING:
+- Hit Enemy:     +1.5%
+- Take 10 HP:    +0.5%
+- Kill:          +15%
+- Equipment:     +7%
+- Death:         -35% current
+
+EMERGENCY PROTOCOL (30% HP):
+- Auto-evolve next form
+- Heal 15% HP
+- 30% damage reduction (3s)
+- Vajrayaksa: Full heal
+
+COMBOS BY FORM:
+1. Goblin:       DDD (21-26 dmg)
+2. Hobgoblin:    DDDD (35-40 dmg)
+3. Ogre:         DDDDD (62-70 dmg)
+4. Apostle Lord: DDDDDD (83-95 dmg)
+5. Vajrayaksa:   DDDDDDDD (130-150 dmg)
+
+SPECIAL MOVES:
+Goblin:
+- S+Up:    Panic Jump (3s cd)
+- S+Left:  Survival Bite (5s cd)
+- S+Right: Goblin Rush (4s cd)
+
+Hobgoblin:
+- S+Up:    Shadow Upper (4s cd)
+- S+Left:  Dark Counter (6s cd)
+- S+Right: Phantom Strike (7s cd)
+
+Ogre:
+- S+Up:    Ogre Slam (7s cd)
+- S+Left:  Ground Quake (8s cd)
+- S+Right: Brutal Charge (9s cd)
+
+Apostle Lord:
+- S+Up:    Demon Ascension (9s cd)
+- S+Left:  Lord's Territory (11s cd)
+- S+Right: Orb Barrage (8s cd)
+
+Vajrayaksa:
+- S+Up:    Heaven Splitter (12s cd)
+- S+Left:  Overlord's Decree (15s cd)
+- S+Right: Thousand Arms Rush (13s cd)
+
+STAT MODIFIERS:
+Form         | Damage | Speed | Defense | Size
+-------------|--------|-------|---------|------
+Goblin       | 0.85x  | 1.3x  | 1.15x   | 0.8x
+Hobgoblin    | 1.0x   | 1.1x  | 1.0x    | 1.0x
+Ogre         | 1.25x  | 0.9x  | 0.85x   | 2.5x
+Apostle Lord | 1.4x   | 1.0x  | 0.7x    | 2.0x
+Vajrayaksa   | 1.6x   | 1.1x  | 0.5x    | 2.5x
+
+FILES:
+- Main: src/Heroes/Rou/Rou.h/cpp
+- States: src/Heroes/Rou/States/
+- VFX: src/Heroes/Rou/Visuals/
+- Tests: src/Heroes/Rou/Tests/
+- Test Program: game-project/src/test_rou_main.cpp

@@ -1,0 +1,86 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)"
+    ],
+    "deny": []
+  },
+  "project": {
+    "name": "DFR (Anime Arena Fighter)",
+    "type": "game",
+    "language": "cpp",
+    "standard": "c++20",
+    "framework": "lsfdc"
+  },
+  "conventions": {
+    "naming": {
+      "classes": "PascalCase",
+      "methods": "camelCase",
+      "constants": "UPPER_SNAKE_CASE",
+      "namespaces": "PascalCase",
+      "files": "PascalCase"
+    },
+    "files": {
+      "maxLines": 500,
+      "separateHeaderImplementation": true,
+      "headerExtension": ".h",
+      "sourceExtension": ".cpp"
+    }
+  },
+  "game_rules": {
+    "mana_system": {
+      "base_mana": 100,
+      "regen_per_second": 5,
+      "no_cooldowns": true
+    },
+    "characters": {
+      "categories": 7,
+      "gear_system": {
+        "gears": 4,
+        "skills_per_gear": 2,
+        "total_skills": 8
+      }
+    },
+    "balance": {
+      "base_health": 1000,
+      "combo_scaling": 0.9,
+      "max_combo_hits": 15
+    }
+  },
+  "paths": {
+    "source": "src/",
+    "examples": "examples/",
+    "prps": "PRPs/",
+    "reference": "reference/LSFDC/",
+    "tests": "tests/"
+  },
+  "lsfdc_patterns": {
+    "combat": "examples/LSFDC/combat/",
+    "network": "examples/LSFDC/network/",
+    "physics": "examples/LSFDC/physics/"
+  },
+  "commands": {
+    "generate-character": {
+      "template": "PRPs/characters/character-template.h",
+      "output": "src/Characters/{category}/{name}.{ext}"
+    },
+    "implement-combat": {
+      "reference": "examples/LSFDC/combat/",
+      "output": "src/Combat/"
+    },
+    "balance-check": {
+      "config": "PRPs/combat/balance-config.json",
+      "report": "reports/balance/"
+    }
+  },
+  "mcp": {
+    "enabled": true,
+    "servers": [
+      "balance-validator",
+      "character-assets",
+      "combat-system",
+      "data-persistence",
+      "environment-generator"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"name":"dfr-mcp-server","version":"1.0.0","description":"MCP server for DFR project","main":"dfr-server.js","scripts":{"start":"node dfr-server.js"},"dependencies":{"@modelcontextprotocol/sdk":"^1.0.0"}}

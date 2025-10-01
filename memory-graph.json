@@ -1,0 +1,198 @@
+{
+  "version": "1.0.0",
+  "project": "DFR-AnimeArenaFighter",
+  "last_updated": "2025-08-29T00:00:00Z",
+  "nodes": {
+    "project_root": {
+      "type": "directory",
+      "path": ".",
+      "description": "DFR project root directory",
+      "children": ["src", "prps", "examples", "claude_config"]
+    },
+    "src": {
+      "type": "directory",
+      "path": "src/",
+      "description": "Main source code directory",
+      "children": ["characters", "combat", "network", "physics", "gamemodes"]
+    },
+    "characters": {
+      "type": "module",
+      "path": "src/Characters/",
+      "description": "Character implementations organized by category",
+      "dependencies": ["combat", "physics"],
+      "key_files": [
+        "CharacterBase.h",
+        "CharacterBase.cpp",
+        "CharacterSystem.h"
+      ],
+      "patterns": ["gear_system", "mana_system", "specialization_systems"]
+    },
+    "combat": {
+      "type": "module",
+      "path": "src/Combat/",
+      "description": "Combat system implementation",
+      "dependencies": ["physics"],
+      "key_files": [
+        "CombatSystem.h",
+        "CombatEnums.h"
+      ],
+      "patterns": ["damage_formula", "frame_data", "combo_system"]
+    },
+    "network": {
+      "type": "module",
+      "path": "src/Network/",
+      "description": "Network layer for multiplayer",
+      "dependencies": [],
+      "key_files": [
+        "NetworkLayer.h"
+      ],
+      "patterns": ["packet_structure", "lag_compensation", "rollback"]
+    },
+    "physics": {
+      "type": "module",
+      "path": "src/Physics/",
+      "description": "Physics and collision detection",
+      "dependencies": [],
+      "key_files": [
+        "PhysicsEngine.h"
+      ],
+      "patterns": ["collision_detection", "hitbox_system", "pushbox"]
+    },
+    "gamemodes": {
+      "type": "module",
+      "path": "src/GameModes/",
+      "description": "Different game mode implementations",
+      "dependencies": ["characters", "combat"],
+      "key_files": [
+        "GameModesManager.h",
+        "DeathMatchMode.h",
+        "RankedMode.h",
+        "BeastMode.h"
+      ]
+    },
+    "prps": {
+      "type": "directory",
+      "path": "PRPs/",
+      "description": "Pattern Reference Points for development",
+      "children": ["character_templates", "combat_config", "network_specs"]
+    },
+    "examples": {
+      "type": "directory",
+      "path": "examples/",
+      "description": "LSFDC pattern examples and references",
+      "children": ["lsfdc_combat", "lsfdc_network", "lsfdc_physics"]
+    },
+    "claude_config": {
+      "type": "configuration",
+      "path": ".claude/",
+      "description": "Claude AI integration configuration",
+      "key_files": [
+        "settings.local.json",
+        "commands/generate-character.md",
+        "commands/implement-combat.md",
+        "commands/balance-check.md"
+      ]
+    }
+  },
+  "patterns": {
+    "gear_system": {
+      "description": "4 gears × 2 skills = 8 total skills per character",
+      "location": "src/Characters/CharacterBase.h",
+      "implementation": "std::array<GearSkill, 8>"
+    },
+    "mana_system": {
+      "description": "100 base mana, no cooldowns, 5/sec regen",
+      "location": "src/Characters/CharacterSystem.h",
+      "constants": {
+        "BASE_MANA": 100,
+        "MANA_REGEN": 5,
+        "NO_COOLDOWNS": true
+      }
+    },
+    "damage_formula": {
+      "description": "LSFDC damage calculation with defense scaling",
+      "location": "examples/LSFDC/combat/damage-formula.cpp",
+      "formula": "damage * (100 / (100 + defense))"
+    },
+    "frame_data": {
+      "description": "Standardized startup, active, recovery frames",
+      "location": "src/Combat/CombatSystem.h",
+      "standards": {
+        "light": "5-8 + 2-3 + 8-12",
+        "medium": "10-15 + 3-5 + 15-20",
+        "heavy": "18-25 + 5-8 + 25-35"
+      }
+    },
+    "collision_detection": {
+      "description": "LSFDC hitbox/hurtbox system",
+      "location": "examples/LSFDC/physics/collision-system.h",
+      "max_boxes": {
+        "hurtboxes": 5,
+        "hitboxes": 3
+      }
+    }
+  },
+  "mcp_servers": {
+    "balance-validator": {
+      "config": "game-project/MCP-Servers/balance-validator-config.json",
+      "purpose": "Automated balance checking and validation"
+    },
+    "character-assets": {
+      "config": "game-project/MCP-Servers/character-assets-config.json",
+      "purpose": "Character asset management and loading"
+    },
+    "combat-system": {
+      "config": "game-project/MCP-Servers/combat-system-config.json",
+      "purpose": "Combat calculation verification"
+    },
+    "data-persistence": {
+      "config": "game-project/MCP-Servers/data-persistence-config.json",
+      "purpose": "Save/load system and player data"
+    },
+    "environment-generator": {
+      "config": "game-project/MCP-Servers/environment-generator-config.json",
+      "purpose": "Stage and environment generation"
+    }
+  },
+  "key_relationships": [
+    {
+      "from": "characters",
+      "to": "combat",
+      "type": "uses",
+      "description": "Characters use combat system for damage calculations"
+    },
+    {
+      "from": "combat",
+      "to": "physics",
+      "type": "depends",
+      "description": "Combat depends on physics for collision detection"
+    },
+    {
+      "from": "gamemodes",
+      "to": "characters",
+      "type": "manages",
+      "description": "Game modes manage character spawning and rules"
+    },
+    {
+      "from": "network",
+      "to": "combat",
+      "type": "synchronizes",
+      "description": "Network synchronizes combat state between players"
+    }
+  ],
+  "development_notes": {
+    "current_focus": "Setting up project structure with LSFDC patterns",
+    "next_steps": [
+      "Implement base character with gear system",
+      "Add LSFDC damage calculations",
+      "Create first 7 characters (one per category)",
+      "Implement network rollback system"
+    ],
+    "known_issues": [],
+    "optimization_targets": [
+      "Collision detection performance",
+      "Network packet size reduction",
+      "Frame data caching"
+    ]
+  }
+}

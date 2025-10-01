@@ -1,0 +1,39 @@
+# Build directories
+out/
+build/
+x64/
+.vs/
+Debug/
+Release/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.ninja
+*.vcxproj*
+*.sln
+
+# Compiled files
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+*.ilk
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+nul
+
+# IDE
+.vscode/
+.idea/
+
+# System files
+Thumbs.db
+.DS_Store

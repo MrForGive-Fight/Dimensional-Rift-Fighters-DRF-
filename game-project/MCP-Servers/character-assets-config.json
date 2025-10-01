@@ -1,0 +1,13 @@
+{
+  "name": "character_assets",
+  "capabilities": [
+    "anime_style_generation",
+    "animation_state_machines",
+    "skill_tree_design",
+    "passive_ability_creation"
+  ],
+  "categories": [
+    "System", "Gods/Heroes", "Murim", 
+    "Cultivation", "Animal", "Monsters", "Chaos"
+  ]
+}

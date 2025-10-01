@@ -1,0 +1,116 @@
+{
+  "balance_rules": {
+    "mana_economy": {
+      "basic_attack_range": [5, 15],
+      "special_move_range": [20, 40],
+      "ultimate_skill_range": [50, 70],
+      "regen_per_second": 5,
+      "efficiency_target": {
+        "min": 5,
+        "max": 10,
+        "description": "Damage per mana point"
+      }
+    },
+    "damage_values": {
+      "light_attack": {
+        "min": 50,
+        "max": 80,
+        "frame_data": {
+          "startup": [5, 8],
+          "active": [2, 3],
+          "recovery": [8, 12]
+        }
+      },
+      "medium_attack": {
+        "min": 100,
+        "max": 150,
+        "frame_data": {
+          "startup": [10, 15],
+          "active": [3, 5],
+          "recovery": [15, 20]
+        }
+      },
+      "heavy_attack": {
+        "min": 200,
+        "max": 300,
+        "frame_data": {
+          "startup": [18, 25],
+          "active": [5, 8],
+          "recovery": [25, 35]
+        }
+      },
+      "skill_multiplier": {
+        "min": 1.5,
+        "max": 3.0
+      }
+    },
+    "combo_system": {
+      "max_hits": 15,
+      "max_damage_percent": 60,
+      "scaling_factor": 0.9,
+      "hitstun_decay": 0.95,
+      "gravity_scaling": 1.05
+    },
+    "frame_advantage": {
+      "light": {
+        "min": -2,
+        "max": 2
+      },
+      "medium": {
+        "min": 0,
+        "max": 5
+      },
+      "heavy": {
+        "min": -5,
+        "max": 10
+      }
+    },
+    "matchup_balance": {
+      "worst_allowed": "6-4",
+      "favorable_minimum": 0.4,
+      "hard_counter_maximum": 0.2
+    }
+  },
+  "character_archetypes": {
+    "rushdown": {
+      "health_modifier": 0.9,
+      "speed_modifier": 1.2,
+      "damage_modifier": 0.95
+    },
+    "grappler": {
+      "health_modifier": 1.2,
+      "speed_modifier": 0.8,
+      "damage_modifier": 1.15
+    },
+    "zoner": {
+      "health_modifier": 0.85,
+      "speed_modifier": 1.0,
+      "damage_modifier": 0.9
+    },
+    "balanced": {
+      "health_modifier": 1.0,
+      "speed_modifier": 1.0,
+      "damage_modifier": 1.0
+    },
+    "puppet": {
+      "health_modifier": 0.8,
+      "speed_modifier": 0.95,
+      "damage_modifier": 0.85
+    },
+    "stance": {
+      "health_modifier": 0.95,
+      "speed_modifier": 1.0,
+      "damage_modifier": 1.0
+    },
+    "resource": {
+      "health_modifier": 1.0,
+      "speed_modifier": 0.95,
+      "damage_modifier": 1.1
+    }
+  },
+  "validation_thresholds": {
+    "damage_variance": 0.1,
+    "frame_data_tolerance": 2,
+    "mana_cost_deviation": 0.15
+  }
+}

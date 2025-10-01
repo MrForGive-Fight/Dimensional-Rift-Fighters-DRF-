@@ -1,0 +1,9 @@
+{
+  "name": "environment_generator",
+  "capabilities": [
+    "arena_layout_generation",
+    "dungeon_procedural_design",
+    "item_spawn_placement",
+    "boss_encounter_scripting"
+  ]
+}

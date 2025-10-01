@@ -1,0 +1,14 @@
+{
+  "name": "combat_system",
+  "capabilities": [
+    "frame_data_generation",
+    "hitbox_validation",
+    "damage_calculation",
+    "combo_system_design"
+  ],
+  "config": {
+    "frame_rate": 60,
+    "max_combo_length": 15,
+    "mana_costs": true
+  }
+}
