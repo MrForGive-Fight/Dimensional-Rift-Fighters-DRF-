@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Murim/HyukWoonSung.h"
 #include "System/Yuito.h"
+#include "GodsHeroes/HyoudouKotetsu.h"
 
 namespace ArenaFighter {
 
@@ -128,25 +129,30 @@ void CharacterFactory::RegisterSystemCharacters() {
 }
 
 void CharacterFactory::RegisterGodsHeroesCharacters() {
+    // Hyoudou Kotetsu - S-Tier Divine Power Thief
+    RegisterCharacter(200, "Hyoudou Kotetsu", CharacterCategory::GodsHeroes,
+        "S-Tier God Thief who corrupts divine powers and transforms into god forms with ultimate clone summoning",
+        []() { return std::make_unique<HyoudouKotetsu>(); });
+
     // Zeus
     RegisterCharacter(201, "Zeus", CharacterCategory::GodsHeroes,
         "King of Olympus wielding divine lightning",
-        []() { return std::make_unique<CharacterBase>("Zeus", 
-                                                      CharacterCategory::GodsHeroes, 
+        []() { return std::make_unique<CharacterBase>("Zeus",
+                                                      CharacterCategory::GodsHeroes,
                                                       StatMode::Attack); });
-    
+
     // Thor
     RegisterCharacter(202, "Thor", CharacterCategory::GodsHeroes,
         "Norse god of thunder with mighty Mjolnir",
-        []() { return std::make_unique<CharacterBase>("Thor", 
-                                                      CharacterCategory::GodsHeroes, 
+        []() { return std::make_unique<CharacterBase>("Thor",
+                                                      CharacterCategory::GodsHeroes,
                                                       StatMode::Hybrid); });
-    
+
     // Athena
     RegisterCharacter(203, "Athena", CharacterCategory::GodsHeroes,
         "Goddess of wisdom and strategic warfare",
-        []() { return std::make_unique<CharacterBase>("Athena", 
-                                                      CharacterCategory::GodsHeroes, 
+        []() { return std::make_unique<CharacterBase>("Athena",
+                                                      CharacterCategory::GodsHeroes,
                                                       StatMode::Defense); });
 }
 
