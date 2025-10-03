@@ -37,3 +37,18 @@ nul
 # System files
 Thumbs.db
 .DS_Store
+
+# External library build artifacts
+external/ozz-animation/build/
+external/ozz-animation/out/
+
+# Animation assets
+*.ozz
+*.fbx
+*.dae
+*.gltf
+*.glb
+
+# External dependencies (managed separately)
+external/*/
+!external/.gitkeep

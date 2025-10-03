@@ -21,6 +21,7 @@ set_target_properties(DFRGame PROPERTIES
 # Include directories
 target_include_directories(DFRGame PRIVATE 
     ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/external/ozz-animation/include
 )
 
 # DirectX include directories
@@ -30,6 +31,7 @@ endif()
 
 # Link libraries
 target_link_libraries(DFRGame PRIVATE
+    # DirectX libraries
     d3d11
     dxgi
     dxguid
@@ -37,6 +39,11 @@ target_link_libraries(DFRGame PRIVATE
     winmm
     shlwapi
     comctl32
+
+    # ozz-animation libraries
+    ozz_animation
+    ozz_base
+    ozz_geometry
 )
 
 # Precompiled headers (optional)
