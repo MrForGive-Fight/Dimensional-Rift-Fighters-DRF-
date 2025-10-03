@@ -4,6 +4,7 @@
 #include "Murim/HyukWoonSung.h"
 #include "System/Yuito.h"
 #include "GodsHeroes/HyoudouKotetsu.h"
+#include "Monsters/GobTheGoodGoblin.h"
 
 namespace ArenaFighter {
 
@@ -231,25 +232,30 @@ void CharacterFactory::RegisterAnimalCharacters() {
 }
 
 void CharacterFactory::RegisterMonstersCharacters() {
+    // Gob the Good Goblin - S-Tier Evolution Master
+    RegisterCharacter(600, "Gob the Good Goblin", CharacterCategory::Monsters,
+        "S-Tier Evolving Predator with 5 evolution stages from weak Goblin to god-like Vajrayaksa Overlord",
+        []() { return std::make_unique<GobTheGoodGoblin>(); });
+
     // Shadow Demon
     RegisterCharacter(601, "Shadow Demon", CharacterCategory::Monsters,
         "Dark entity from the void between worlds",
-        []() { return std::make_unique<CharacterBase>("Shadow Demon", 
-                                                      CharacterCategory::Monsters, 
+        []() { return std::make_unique<CharacterBase>("Shadow Demon",
+                                                      CharacterCategory::Monsters,
                                                       StatMode::Attack); });
-    
+
     // Undead King
     RegisterCharacter(602, "Undead King", CharacterCategory::Monsters,
         "Lich lord commanding legions of undead",
-        []() { return std::make_unique<CharacterBase>("Undead King", 
-                                                      CharacterCategory::Monsters, 
+        []() { return std::make_unique<CharacterBase>("Undead King",
+                                                      CharacterCategory::Monsters,
                                                       StatMode::Defense); });
-    
+
     // Eldritch Horror
     RegisterCharacter(603, "Eldritch Horror", CharacterCategory::Monsters,
         "Cosmic nightmare defying comprehension",
-        []() { return std::make_unique<CharacterBase>("Eldritch Horror", 
-                                                      CharacterCategory::Monsters, 
+        []() { return std::make_unique<CharacterBase>("Eldritch Horror",
+                                                      CharacterCategory::Monsters,
                                                       StatMode::Custom); });
 }
 
