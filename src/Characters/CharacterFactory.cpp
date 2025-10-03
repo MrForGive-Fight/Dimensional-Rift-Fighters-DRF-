@@ -6,6 +6,7 @@
 #include "GodsHeroes/HyoudouKotetsu.h"
 #include "Monsters/GobTheGoodGoblin.h"
 #include "Cultivation/Seraphina.h"
+#include "Animal/MissBatCrimsonAuthority.h"
 
 namespace ArenaFighter {
 
@@ -215,25 +216,30 @@ void CharacterFactory::RegisterCultivationCharacters() {
 }
 
 void CharacterFactory::RegisterAnimalCharacters() {
+    // Miss Bat CRIMSON AUTHORITY - Blood Mage Executioner
+    RegisterCharacter(500, "Miss Bat - Crimson Authority", CharacterCategory::Animal,
+        "Very Hard Blood Mage/Executioner with triple resource management, summoning, building, and instant-kill mechanics",
+        []() { return std::make_unique<MissBatCrimsonAuthority>(); });
+
     // Thunder Wolf
     RegisterCharacter(501, "Thunder Wolf", CharacterCategory::Animal,
         "Alpha predator channeling storm energy",
-        []() { return std::make_unique<CharacterBase>("Thunder Wolf", 
-                                                      CharacterCategory::Animal, 
+        []() { return std::make_unique<CharacterBase>("Thunder Wolf",
+                                                      CharacterCategory::Animal,
                                                       StatMode::Attack); });
-    
+
     // Ancient Turtle
     RegisterCharacter(502, "Ancient Turtle", CharacterCategory::Animal,
         "Wise guardian with impenetrable defense",
-        []() { return std::make_unique<CharacterBase>("Ancient Turtle", 
-                                                      CharacterCategory::Animal, 
+        []() { return std::make_unique<CharacterBase>("Ancient Turtle",
+                                                      CharacterCategory::Animal,
                                                       StatMode::Defense); });
-    
+
     // Phoenix
     RegisterCharacter(503, "Phoenix", CharacterCategory::Animal,
         "Immortal firebird of rebirth",
-        []() { return std::make_unique<CharacterBase>("Phoenix", 
-                                                      CharacterCategory::Animal, 
+        []() { return std::make_unique<CharacterBase>("Phoenix",
+                                                      CharacterCategory::Animal,
                                                       StatMode::Special); });
 }
 
