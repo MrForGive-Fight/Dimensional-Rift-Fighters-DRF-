@@ -4,6 +4,8 @@
 #include <random>
 #include <algorithm>
 
+#include <iostream>
+#include "../Animation/CharacterAnimator.h"
 namespace ArenaFighter {
 
 // Static member initialization
@@ -135,6 +137,10 @@ void CharacterBase::Update(float deltaTime) {
 }
 
 void CharacterBase::UpdateState(float deltaTime) {
+    // Update animation system
+    if (m_animator) {
+        m_animator->Update(deltaTime);
+    }
     m_stateTimer += deltaTime;
     
     // Auto-recover from certain states after time
@@ -333,3 +339,25 @@ bool CharacterBase::CanExecuteSpecialMoveInStance(InputDirection direction, int 
 }
 
 } // namespace ArenaFighter
+
+// Animation system implementation
+bool CharacterBase::InitializeAnimator(const std::string& skeletonPath) {
+    if (!m_animator) {
+        m_animator = std::make_unique<CharacterAnimator>();
+    }
+    
+    return m_animator->Initialize(skeletonPath);
+}
+
+bool CharacterBase::LoadAnimation(const std::string& name, const std::string& filepath) {
+    if (!m_animator) {
+        std::cerr << "CharacterBase::LoadAnimation: Animator not initialized!" << std::endl;
+        return false;
+    }
+    
+    return m_animator->LoadAnimation(name, filepath);
+}
+
+void CharacterBase::PlayAnimation(const std::string& stateName, bool forceRestart) {
+    if (!m_animator) {
+        std::cerr << "CharacterBase::PlayAnimation: Animator not initialized!" << std::endl;
