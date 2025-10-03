@@ -5,6 +5,7 @@
 #include "System/Yuito.h"
 #include "GodsHeroes/HyoudouKotetsu.h"
 #include "Monsters/GobTheGoodGoblin.h"
+#include "Cultivation/Seraphina.h"
 
 namespace ArenaFighter {
 
@@ -186,25 +187,30 @@ void CharacterFactory::RegisterMurimCharacters() {
 }
 
 void CharacterFactory::RegisterCultivationCharacters() {
+    // Seraphina - S-Tier Dual-Cultivation Specialist
+    RegisterCharacter(401, "Seraphina - Celestial Poison Sage", CharacterCategory::Cultivation,
+        "S-Tier Dual-Cultivation master who switches between Ice and Poison Dao paths with Heavenly Convergence ultimate",
+        []() { return std::make_unique<Seraphina>(); });
+
     // Jade Emperor
-    RegisterCharacter(401, "Jade Emperor", CharacterCategory::Cultivation,
+    RegisterCharacter(402, "Jade Emperor", CharacterCategory::Cultivation,
         "Immortal ruler who transcended mortality",
-        []() { return std::make_unique<CharacterBase>("Jade Emperor", 
-                                                      CharacterCategory::Cultivation, 
+        []() { return std::make_unique<CharacterBase>("Jade Emperor",
+                                                      CharacterCategory::Cultivation,
                                                       StatMode::Special); });
-    
+
     // Dao Seeker
-    RegisterCharacter(402, "Dao Seeker", CharacterCategory::Cultivation,
+    RegisterCharacter(403, "Dao Seeker", CharacterCategory::Cultivation,
         "Cultivator pursuing the ultimate truth",
-        []() { return std::make_unique<CharacterBase>("Dao Seeker", 
-                                                      CharacterCategory::Cultivation, 
+        []() { return std::make_unique<CharacterBase>("Dao Seeker",
+                                                      CharacterCategory::Cultivation,
                                                       StatMode::Hybrid); });
-    
+
     // Spirit Alchemist
-    RegisterCharacter(403, "Spirit Alchemist", CharacterCategory::Cultivation,
+    RegisterCharacter(404, "Spirit Alchemist", CharacterCategory::Cultivation,
         "Master of pill refinement and spiritual flames",
-        []() { return std::make_unique<CharacterBase>("Spirit Alchemist", 
-                                                      CharacterCategory::Cultivation, 
+        []() { return std::make_unique<CharacterBase>("Spirit Alchemist",
+                                                      CharacterCategory::Cultivation,
                                                       StatMode::Special); });
 }
 
