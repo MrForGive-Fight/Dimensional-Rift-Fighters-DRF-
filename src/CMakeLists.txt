@@ -1,7 +1,7 @@
 # DFR Source CMake Configuration
 
 # Collect all source files
-file(GLOB_RECURSE DFR_SOURCES 
+file(GLOB_RECURSE DFR_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/*.h
 )
@@ -19,11 +19,12 @@ set_target_properties(DFRGame PROPERTIES
 )
 
 # Include directories
-target_include_directories(DFRGame PRIVATE 
+target_include_directories(DFRGame PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/external/ozz-animation/include
     ${CMAKE_SOURCE_DIR}/external/DirectXTK/Inc
     ${CMAKE_SOURCE_DIR}/external/DirectXMath/Inc
+    ${CMAKE_SOURCE_DIR}/external/BehaviorTree.CPP/include
 )
 
 # DirectX include directories
@@ -49,6 +50,9 @@ target_link_libraries(DFRGame PRIVATE
 
     # DirectXTK library
     DirectXTK
+
+    # BehaviorTree.CPP library
+    behaviortree_cpp
 )
 
 # Precompiled headers (optional)

@@ -61,3 +61,7 @@ external/DirectXTK/bin/
 # DirectXMath (header-only library)
 external/DirectXMath/build/
 external/DirectXMath/out/
+
+# BehaviorTree.CPP build artifacts
+external/BehaviorTree.CPP/build/
+external/BehaviorTree.CPP/out/

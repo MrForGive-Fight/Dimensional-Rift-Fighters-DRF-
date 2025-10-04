@@ -104,3 +104,9 @@ add_subdirectory(external/ozz-animation)
 set(BUILD_TOOLS OFF CACHE BOOL "Disable DirectXTK tools" FORCE)
 set(BUILD_XAUDIO_WIN10 OFF CACHE BOOL "Disable XAudio for Win10" FORCE)
 add_subdirectory(external/DirectXTK)
+
+# BehaviorTree.CPP - AI behavior tree library
+set(BUILD_EXAMPLES OFF CACHE BOOL "Disable BehaviorTree examples" FORCE)
+set(BUILD_UNIT_TESTS OFF CACHE BOOL "Disable BehaviorTree tests" FORCE)
+set(BUILD_TOOLS OFF CACHE BOOL "Disable BehaviorTree tools" FORCE)
+add_subdirectory(external/BehaviorTree.CPP)
