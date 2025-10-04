@@ -52,3 +52,8 @@ external/ozz-animation/out/
 # External dependencies (managed separately)
 external/*/
 !external/.gitkeep
+
+# DirectXTK build artifacts
+external/DirectXTK/build/
+external/DirectXTK/out/
+external/DirectXTK/bin/

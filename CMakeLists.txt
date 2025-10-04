@@ -99,3 +99,8 @@ set(ozz_build_howtos OFF CACHE BOOL "Disable ozz howtos" FORCE)
 set(ozz_build_tests OFF CACHE BOOL "Disable ozz tests" FORCE)
 set(ozz_build_tools ON CACHE BOOL "Enable ozz tools" FORCE)
 add_subdirectory(external/ozz-animation)
+
+# DirectXTK - DirectX Tool Kit for particle effects and utilities
+set(BUILD_TOOLS OFF CACHE BOOL "Disable DirectXTK tools" FORCE)
+set(BUILD_XAUDIO_WIN10 OFF CACHE BOOL "Disable XAudio for Win10" FORCE)
+add_subdirectory(external/DirectXTK)
