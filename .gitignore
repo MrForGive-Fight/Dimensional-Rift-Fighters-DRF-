@@ -57,3 +57,7 @@ external/*/
 external/DirectXTK/build/
 external/DirectXTK/out/
 external/DirectXTK/bin/
+
+# DirectXMath (header-only library)
+external/DirectXMath/build/
+external/DirectXMath/out/

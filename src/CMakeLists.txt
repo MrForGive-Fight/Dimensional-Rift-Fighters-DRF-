@@ -23,6 +23,7 @@ target_include_directories(DFRGame PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/external/ozz-animation/include
     ${CMAKE_SOURCE_DIR}/external/DirectXTK/Inc
+    ${CMAKE_SOURCE_DIR}/external/DirectXMath/Inc
 )
 
 # DirectX include directories
